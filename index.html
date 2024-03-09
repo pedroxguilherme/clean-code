@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1>Clean code </h1>
+
+
+
+<label for="primeiroValor">Valor</label>
+<input type ="text" id="primeiroValor"/>
+  <br><br>  
+
+  
+<label for="segundoValor">Valor</label>
+<input type ="text" id="segundoValor"/>
+<br><br>  
+
+<input type="button" value="Somar" onclick="calculadora('somar')">
+<br><br>  
+<input type="button" value="Subtrair" onclick="calculadora('subtrair')">
+<br><br>  
+
+<label for="resultado">Resultado</label>
+<input type ="text" id="resultado" readonly/>
+<br><br>
+
+<script>
+
+function calculadora(tipoOperacao){
+    
+    var primeiroValorHTML = document.getElementById("primeiroValor").value;
+    var segundoValorHTML = document.getElementById("segundoValor").value;
+    
+    var primeiroValor = parseInt(primeiroValorHTML);
+    var segundoValor = parseInt(segundoValorHTML);
+    var resultado = 0;
+    
+    if(tipoOperacao === 'somar'){
+        resultado = somar(primeiroValor,segundoValor);
+    }
+    else if(tipoOperacao === 'subtrair')
+    {
+        resultado = subtrair(primeiroValor,segundoValor);
+    }
+    Resultado(resultado);
+
+
+}
+
+
+
+function somar(primeiroValor,segundoValor){
+    
+    
+
+    if(validarNumerosPositivos(primeiroValor,segundoValor)){
+        return primeiroValor + segundoValor;
+    }
+   
+}
+function subtrair(primeiroValor,segundoValor){
+   
+
+    if(validarNumerosPositivos(primeiroValor,segundoValor)){
+        return primeiroValor - segundoValor;
+    }
+
+}
+
+
+function Resultado(resultado){
+    document.getElementById("resultado").value = resultado;     
+
+}
+
+
+
+function escrever(mensagem){
+
+  console.escrever("mensagem");
+
+
+}
+function validarNumerosPositivos(primeiroNumero, segundoNumero){
+if(primeiroNumero > 0 && segundoNumero > 0)
+{
+    return true;
+}
+return false;
+
+
+}
+
+
+
+
+</script>
+
+
+
+</body>
+</html>
